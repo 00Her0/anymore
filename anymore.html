@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>anymore engine version 0.1</title>
+<style>
+* {
+	text-align: center;
+}
+</style>
+</head>
+<body>
+</body>
+<p>lol<p>
+<script>
+// ---------------------------- //
+//                              //
+// My code probably sucks JSYK. //
+//                              //
+// ---------------------------- //
+class Card {
+	constructor(chain, name, params) {
+		chain.push(this);
+		this.name = name;
+		this.img = params.img;
+		this.title = params.title;
+		this.body = params.body;
+		this.next = params.next
+		this.params = this.params;
+	}
+	add() {
+		document.body.innerHTML = '';
+		this.append(this.img, {type: 'img'});
+		this.append(this.title, {type: 'title'});
+		this.append(this.body, {type: 'body'});
+	}
+	append(text, params) {
+		if (params.type == 'title') {
+			var elem = document.createElement('h1');
+		} else if (params.type == 'img') {
+			var elem = document.createElement('img');
+			elem.setAttribute('src', 'https://i.ibb.co/7nH9JL0/anymore-test-1.png');
+		} else {
+			var elem = document.createElement('p');
+		}
+		elem.innerText = text;
+		document.body.appendChild(elem);
+	}
+};
+
+var main = [];
+
+var Card1 = new Card(main, '1', {title: 'HEY!', body: 'Welcome to Anymore Engine!', next: 'n'})
+Card1.add();
+</script>
+<img src="https://i.ibb.co/ZgS3n5L/anymore-test-1.png">
+</body>
