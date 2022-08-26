@@ -33,7 +33,10 @@ class Card {
 		this.append(this.img, {type: 'img'});
 		this.append(this.title, {type: 'title'});
 		this.append(this.body, {type: 'body'});
-		this.append(this.next[0], {type: 'next'});
+		for (var i = 0; i < (this.next.length - 1); i += 2) {
+			this.append(this.next[i], {type: 'next', next: this.next[i+1]});
+			console.log(i);
+		}
 	}
 	append(text, params) {
 		if (params.type == 'title') {
@@ -43,7 +46,7 @@ class Card {
 			elem.setAttribute('src', text);
 		} else if (params.type == 'next') {
 			var elem = document.createElement('button');
-			elem.setAttribute('onclick', 'Card2.add();');
+			elem.setAttribute('onclick', params.next);
 		} else {
 			var elem = document.createElement('p');
 		}
@@ -54,7 +57,7 @@ class Card {
 
 var main = [];
 
-var Card1 = new Card('1', {title: 'HEY!', img: 'anymore-test-1.png', body: 'Welcome to Anymore Engine!', next: ['==>', Card2]})
-var Card2 = new Card('2', {title: 'What\'s that, you say?', img: 'anymore-test-2.png', body: 'Anymore engine is a lighweight visual novel engine.', next: ''})
+var Card1 = new Card('1', {title: 'HEY!', img: 'images/anymore-test-1.png', body: 'Welcome to Anymore Engine!', next: ['==>', 'Card2.add()']});
+var Card2 = new Card('2', {title: 'What\'s that, you say?', img: 'images/anymore-test-2.png', body: 'Anymore engine is a lighweight visual novel engine.', next: ''});
 Card1.add();
 </script>
