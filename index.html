@@ -58,6 +58,7 @@ class Card {
 var main = [];
 
 var Card1 = new Card('1', {title: 'HEY!', img: 'images/anymore-test-1.png', body: 'Welcome to Anymore Engine!', next: ['==>', 'Card2.add()']});
-var Card2 = new Card('2', {title: 'What\'s that, you say?', img: 'images/anymore-test-2.png', body: 'Anymore engine is a lighweight visual novel engine.', next: ''});
+var Card2 = new Card('2', {title: 'What\'s that, you say?', img: 'images/anymore-test-2.png', body: 'Anymore engine is a lighweight visual novel engine.', next: ['==>', 'Card3.add()']});
+var Card3 = new Card('3', {title: 'Where to now?', img: 'images/anymore-test-3.png', body: 'Wanna see a longer demo or try using the engine?', next: ['Longer Demo', null, 'Use the Engine', null]});
 Card1.add();
 </script>
